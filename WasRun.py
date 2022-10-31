@@ -1,13 +1,12 @@
-# aka Test Case class
-class WasRun:
+# WasRun is derived from TestCase
+from TestCase import TestCase
+
+
+class WasRun(TestCase):
     # Constructor
     def __init__(self, name):
         self.wasRun = None
-        self.name = name
+        TestCase.__init__(self, name)
 
     def testMethod(self):
         self.wasRun = 1
-
-    def run(self):
-        method = getattr(self, self.name)
-        method()
